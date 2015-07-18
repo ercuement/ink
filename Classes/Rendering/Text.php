@@ -1,30 +1,25 @@
 <?php
 /**
- * @todo    General file information
+ * Render text elements
  *
- * @package ...
  * @author  Tim Lochmüller
  */
 
 namespace FRUIT\Ink\Rendering;
 
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-
 /**
- * @todo   General class information
+ * Render text elements
  */
 class Text extends AbstractRendering {
 
 	/**
-	 * @param ContentObjectRenderer $contentObject
+	 * Render the current content
 	 *
 	 * @return array
 	 */
-	public function render($contentObject) {
-		$lines = array();
-		// @todo define!!!
+	public function renderInternal() {
 
-		// $lines[] = trim($this->breakContent(strip_tags($this->parseBody($this->cObj->data['bodytext']))), CRLF . TAB);
+		$lines[] = trim($this->breakContent(strip_tags($this->parseBody($this->contentObject->data['bodytext']))), CRLF . TAB);
 		return $lines;
 
 	}
